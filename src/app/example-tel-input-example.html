@@ -1,0 +1,19 @@
+<mat-form-field class="cp-currency-field" appearance="outline">
+  <mat-label>{{label}}</mat-label>
+  <span matPrefix>$</span>
+  <input matInput [(ngModel)]="value" />
+
+  <button
+    mat-button
+    *ngIf="value"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="value=null"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-hint>Errors appear instantly!</mat-hint>
+  <mat-error> Please enter a valid email address </mat-error>
+  <mat-error *ngIf="true"> Email is <strong>required</strong> </mat-error>
+</mat-form-field>
